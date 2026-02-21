@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronics Review Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Electronics Review Hub</h1>
+        <p>Share your real-world experience with phones, laptops, and gadgets.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Submit a review</h2>
+        <form id="review-form">
+          <label for="product-name">Product name</label>
+          <input id="product-name" name="productName" type="text" required maxlength="80" />
+
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option>Phone</option>
+            <option>Laptop</option>
+            <option>Tablet</option>
+            <option>Headphones</option>
+            <option>Smartwatch</option>
+            <option>Camera</option>
+            <option>Other</option>
+          </select>
+
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="">Choose rating</option>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Great</option>
+            <option value="3">3 - Good</option>
+            <option value="2">2 - Fair</option>
+            <option value="1">1 - Poor</option>
+          </select>
+
+          <label for="review-text">Review</label>
+          <textarea id="review-text" name="reviewText" rows="5" required maxlength="500"></textarea>
+
+          <button type="submit">Post Review</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="reviews-header">
+          <h2>Community reviews</h2>
+          <button id="clear-reviews" type="button" class="secondary">Clear all</button>
+        </div>
+        <p id="empty-message">No reviews yet. Be the first to share your experience!</p>
+        <ul id="review-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <template id="review-template">
+      <li class="review-item">
+        <div class="review-top-row">
+          <h3 class="review-product"></h3>
+          <span class="review-rating"></span>
+        </div>
+        <p class="review-meta"></p>
+        <p class="review-body"></p>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
